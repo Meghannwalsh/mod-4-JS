@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
 import SeeUsers from './containers/SeeUsers.js'
-import Map from './containers/Map.js'
+import MapContainer from './containers/MapContainer.js'
 import Login from './components/Login.js'
 
 class App extends Component {
@@ -11,13 +11,7 @@ class App extends Component {
   }
 
   componentDidMount(){
-    fetch('http://localhost:3000', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-
-    })
+    fetch('http://localhost:3000/users')
     .then(resp => resp.json())
     .then(output => {
       this.setState({
@@ -30,8 +24,8 @@ class App extends Component {
     console.log(this.state)
       return (
         <div className="App">
-          <SeeUsers />
-          <Map />
+          <SeeUsers userList={this.state.userList}/>
+          <MapContainer />
           <Login />
           
         </div>

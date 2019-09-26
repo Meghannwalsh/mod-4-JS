@@ -8,7 +8,9 @@ class User extends Component {
 
         return (
             <div >
-
+                <h1>{this.props.user.name}</h1>
+                <h4>{this.props.user.color}</h4>
+                <h4>{this.props.user.current_location}</h4>
             </div>
         );
     }

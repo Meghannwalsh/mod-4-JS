@@ -10,7 +10,7 @@ class SeeUsers extends Component {
 
         return (
             <div >
-
+                {this.props.userList.map(user => <User user={user}/>)}
             </div>
         );
     }
