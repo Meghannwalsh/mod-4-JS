@@ -27,10 +27,14 @@ export class MapContainer extends Component {
   };
 
   render() {
+    console.log("MapContainer state", this.state)
+    console.log("MapContainer props", this.props)
     return (
       <CurrentLocation
         centerAroundCurrentLocation
         google={this.props.google}
+        markingCurrentLocation={this.props.markingCurrentLocation}
+        userList={this.props.userList}
       >
         <Marker onClick={this.onMarkerClick} name={'current location'} />
         <InfoWindow

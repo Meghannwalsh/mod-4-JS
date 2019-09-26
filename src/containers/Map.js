@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import User from '../components/User'
 
 const mapStyles = {
   map: {
     position: 'absolute',
-    width: '100%',
-    height: '100%'
+    width: '50%',
+    height: '50%'
   }
 };
 
@@ -47,6 +48,8 @@ export class CurrentLocation extends React.Component {
         }
       
         componentDidMount =() => {
+         
+        
           if (this.props.centerAroundCurrentLocation) {
             if (navigator && navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(pos => {
@@ -107,14 +110,28 @@ export class CurrentLocation extends React.Component {
         }
 
       render() {
+        console.log("Map state", this.state)
+        console.log("Map props", this.props)
         const style = Object.assign({}, mapStyles.map);
        return (
          <div>
            <div style={style} ref="map">
              Loading map...
            </div>
+           
            {this.renderChildren()}
+          
+           {this.props.userList.map(user =>{
+
+           return   <User user={user} 
+            markingCurrentLocation={this.props.markingCurrentLocation}
+            currentLocation={this.state.currentLocation}/>}) }
+
          </div>
+             
+              
+             
+
        );
      }
 
