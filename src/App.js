@@ -7,17 +7,13 @@ import Login from './components/Login.js'
 
 class App extends Component {
   state = {
-    userList: []
+    userList: [],
+    
   }
+  
 
   componentDidMount(){
-    fetch('http://localhost:3000', {
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      }
-
-    })
+    fetch('http://localhost:3000') 
     .then(resp => resp.json())
     .then(output => {
       this.setState({
@@ -28,6 +24,7 @@ class App extends Component {
 
   render() {
     console.log(this.state)
+    debugger
       return (
         <div className="App">
           <SeeUsers />
