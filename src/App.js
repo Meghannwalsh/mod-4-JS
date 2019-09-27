@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import SeeUsers from './containers/SeeUsers.js'
+import SeeUsers from './Pages/SeeUsers'
 import MapContainer from './containers/MapContainer.js'
-import Login from './components/Login.js'
+import Login from './Pages/Login'
 import CurrentLocation from './containers/Map';
+import NavBar from './components/Navbar';
+import SignUp from './Pages/SignUp';
+
+
 
 class App extends Component {
   state = {
@@ -52,9 +56,12 @@ class App extends Component {
     console.log("app state", this.state.userList)
       return (
         <div className="App">
+          <NavBar />
           <SeeUsers userList={this.state.userList}/>
           <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList}/>
           <Login />
+          <SignUp/>
+     
           
         </div>
       );
