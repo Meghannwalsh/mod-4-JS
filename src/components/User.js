@@ -15,7 +15,7 @@ class User extends Component {
         // console.log("user current location", this.props.user.current_location.stringify)
 
         return (
-            <div>
+            <div className = "card">
                 <h1>{this.props.user.name}</h1>
                 <h4>{this.props.user.color}</h4>
                 {/* <h4>{this.props.user.current_location.stringify}</h4> */}
