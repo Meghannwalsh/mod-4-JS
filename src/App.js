@@ -13,9 +13,26 @@ import SignUp from './Pages/SignUp';
 class App extends Component {
   state = {
     userList: [],
-    usersLocation: {}
-  }
+    usersLocation: {},
+    current_user: {}
+  } 
   
+  currentUserHandler = (user) => {
+    this.setState({
+      current_user: user
+    })
+
+    if (!this.state.userList.includes(user)){
+      fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ user })
+      })
+    
+    }
+  }
 
   componentDidMount(){
     fetch('http://localhost:3000/users')
@@ -31,6 +48,7 @@ class App extends Component {
     // console.log("manage state location", currentlocation)
     // console.log("user list state", this.state.userList)
     // console.log("user from user", user)
+    
       let newList = []
       this.state.userList.forEach(oneUser => {
       if (oneUser.id === user.id) {
@@ -54,16 +72,17 @@ class App extends Component {
 
 
   render() {
-    console.log(this.state)
-    debugger
-    console.log("app state", this.state.userList)
+    console.log("amount of users", this.state.userList)
+    // console.log(this.state)
+    // debugger
+    // console.log("app state", this.state.userList)
       return (
         <div className="App">
           <NavBar />
           <SeeUsers userList={this.state.userList}/>
           <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList}/>
           <Login />
-          <SignUp/>
+          <SignUp currentUserHandler={this.currentUserHandler}/>
      
           
         </div>

@@ -1,14 +1,40 @@
 import React, { Component } from 'react'
 
 export class SignUp extends Component {
+    state = {
+         name: '',
+         password: ''
+
+    }
+
+    handleChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        const newPerson = {
+            name: this.state.name,
+            password: this.state.password,
+            color: "blue",
+            current_location: null
+        }
+        this.props.currentUserHandler(newPerson)
+    }
+
     render() {
+        console.log("signUp", this.state)
         return (
             <div className="sign-up-page">
                 <h1>Create an Account</h1>
-                <form className="sign-up-form">
+                <form onSubmit={this.handleSubmit} className="sign-up-form">
                     <div className="form-control">
                         <label htmlFor="users-name">Name:</label>
-                        <input name="user[name]" type="text"/>
+                        <input name="name" onChange={this.handleChange} type="text" value={this.state.name}/>
+                        <label htmlFor="users-password">Password:</label>
+                        <input name="password" onChange={this.handleChange} type="text" value={this.state.passwrod} />
                     </div>
 
                     <button type="submit">Sign Up</button>
