@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import User from '../components/User.js'
+import User from '../components/User'
 
 
 class SeeUsers extends Component {
@@ -10,7 +10,7 @@ class SeeUsers extends Component {
 
         return (
             <div >
-
+                {this.props.userList.map(user => <User user={user}/>)}
             </div>
         );
     }
