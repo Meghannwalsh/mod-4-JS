@@ -7,6 +7,8 @@ import Login from './Pages/Login'
 import CurrentLocation from './containers/Map';
 import NavBar from './components/Navbar';
 import SignUp from './Pages/SignUp';
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Welcome from './Pages/Welcome';
 
 
 
@@ -77,15 +79,33 @@ class App extends Component {
     // debugger
     // console.log("app state", this.state.userList)
       return (
+        <Router>
         <div className="App">
           <NavBar />
-          <SeeUsers userList={this.state.userList}/>
-          <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList}/>
-          <Login />
-          <SignUp currentUserHandler={this.currentUserHandler}/>
-     
+        
+        <Switch>
+        <Route exact path='/' component={Welcome} />
+          <Route exact path='/login' component={Login} />
+              <Route exact path='/signup' component={() => <Signup currentUserHandler={this.currentUserHandler}/>} />
+
+           
+          <Route 
+          exact path='/map' 
+          component={() => <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList} /> }>
+          </Route>
+          
+          <Route 
+          exact path='/map' 
+          component={() => <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList} /> }>
+          </Route>
+          
+          <Route
+           exact path='/users' 
+          component={() => <SeeUsers userList={this.state.userList} />} />
+        </Switch>
           
         </div>
+        </Router>
       );
     }
   }
