@@ -40,10 +40,7 @@ export class SignUp extends Component {
                     </div>
                     <br/>
                     <br/>
-                    <div className="form-control">
-                        <label htmlFor="users-password">Password:</label>
-                        <input name="user[password]" type="text"/>
-                    </div>
+                   
                     
                 <br/>
                     <button type="submit">Sign Up</button>
