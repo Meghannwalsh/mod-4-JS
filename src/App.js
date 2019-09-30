@@ -86,7 +86,7 @@ class App extends Component {
         <Switch>
         <Route exact path='/' component={Welcome} />
           <Route exact path='/login' component={Login} />
-              <Route exact path='/signup' component={() => <Signup currentUserHandler={this.currentUserHandler}/>} />
+              <Route exact path='/signup' component={() => <SignUp currentUserHandler={this.currentUserHandler}/>} />
 
            
           <Route 
