@@ -24,7 +24,7 @@ export class Login extends Component {
     render(){
         
         return (
-            <div>
+            <div className = "login-page">
             <h1>Login</h1>
             <br/>
             <br/>
@@ -45,7 +45,9 @@ export class Login extends Component {
             </form>
             <br/>
             <img src = "https://i.stack.imgur.com/Ndsyl.gif" width="50px"/>
+            <img src="https://media3.giphy.com/media/7J1jQSyYkCa93MH1PH/source.gif" width="800px" />
             </div>
+    
         
         )
     }

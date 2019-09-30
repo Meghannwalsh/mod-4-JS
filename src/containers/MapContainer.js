@@ -14,7 +14,9 @@ export class MapContainer extends Component {
     this.setState({
       selectedPlace: props,
       activeMarker: marker,
-      showingInfoWindow: true
+      showingInfoWindow: true,
+      draggable:true,
+      title:"Drag me!"
     });
 
   onClose = props => {
@@ -38,10 +40,10 @@ export class MapContainer extends Component {
         markingCurrentLocation={this.props.markingCurrentLocation}
         userList={this.props.userList}
       >
+        
         <Marker onClick={this.onMarkerClick}
         icon={"https://static.thenounproject.com/png/5024-200.png" }
-       
-         name={'current location'} />
+       name={'current location'} />
   
          
         <InfoWindow
@@ -51,13 +53,7 @@ export class MapContainer extends Component {
             <div><p> <a href="users">
             "/users"</a> </p>'
           </div>
-          
-         
-          
-          
-         
-        
-          <div>
+        <div>
             <p>Hi</p>
             <p>☀️☀️☀️☀️</p>
             <h3>🌺🌺</h3>

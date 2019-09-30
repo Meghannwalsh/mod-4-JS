@@ -85,6 +85,7 @@ class App extends Component {
         <Router>
         <div className="App">
           <NavBar />
+
         
         <Switch>
         <Route exact path='/' component={Welcome} />

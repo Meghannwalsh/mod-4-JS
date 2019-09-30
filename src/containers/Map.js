@@ -1,12 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import User from '../components/User'
+import Navbar2 from '../components/NavBar2';
+import NavCSS from '../components/NavBar2CSS.css';
+
+
+
 
 const mapStyles = {
   map: {
     position: 'absolute',
-    width: '100%',
-    height: '900px'
+    right: "100px",
+    top: "300px",
+    width: '65%',
+    height: '3800px'
   }
 };
 
@@ -19,7 +26,8 @@ export class CurrentLocation extends React.Component {
         this.state = {
           currentLocation: {
             lat: lat,
-            lng: lng
+            lng: lng,
+            
           }
         };
       }
@@ -80,6 +88,7 @@ export class CurrentLocation extends React.Component {
             let { zoom } = this.props;
             const { lat, lng } = this.state.currentLocation;
             const center = new maps.LatLng(lat, lng);
+            
             const mapConfig = Object.assign(
               {},
               {
@@ -93,6 +102,7 @@ export class CurrentLocation extends React.Component {
           }
         }
 
+        
 
         renderChildren() {
           const { children } = this.props;
@@ -104,7 +114,8 @@ export class CurrentLocation extends React.Component {
             return React.cloneElement(c, {
               map: this.map,
               google: this.props.google,
-              mapCenter: this.state.currentLocation
+              mapCenter: this.state.currentLocation,
+             
             });
           });
         }
@@ -117,6 +128,7 @@ export class CurrentLocation extends React.Component {
          <div>
            <div style={style} ref="map">
              Loading map...
+             
            </div>
            
            {this.renderChildren()}
@@ -126,7 +138,8 @@ export class CurrentLocation extends React.Component {
            return   <User user={user} 
             markingCurrentLocation={this.props.markingCurrentLocation}
             currentLocation={this.state.currentLocation}/>}) }
-
+           
+           <Navbar2/>
          </div>
              
               

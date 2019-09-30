@@ -24,9 +24,9 @@ body {
 
 .login-page {
   position: relative;
-  top: 200px;
+  top: 100px;
   left: 550px;
-  background-color: rgb(255, 212, 212);
+  background-color: rgb(243, 234, 255);
   width: 300px;
   height: 400px;
   border-style: solid;
@@ -63,17 +63,20 @@ li {
   list-style: none;
 }
 .card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(254, 47, 47, 0.721);
   transition: 0.3s;
+  width:400px;
+  height:500px;
+  text-align: center;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgb(116, 4, 24);
 }
 
 /* Add some padding inside the card container */
 .container {
+ 
   padding: 2px 16px;
 }
