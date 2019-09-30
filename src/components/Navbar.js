@@ -11,17 +11,17 @@ export default function Navbar() {
                  <Link to ="/signup">
                  <li> Sign Up </li>
                  </Link>
-                 <img src= "https://media.giphy.com/media/1oF1MaxVOqrgtG4hev/giphy.gif" width="60px" height="50px"/>
+                 <img src= "https://media.giphy.com/media/1oF1MaxVOqrgtG4hev/giphy.gif" alt="location" width="60px" height="50px"/>
 
                  <Link to ="/login">
                  <li> Login </li>
                  </Link>
-                 <img src= "https://media.giphy.com/media/1oF1MaxVOqrgtG4hev/giphy.gif" width="60px" height="50px"/>
+                 <img src= "https://media.giphy.com/media/1oF1MaxVOqrgtG4hev/giphy.gif" alt="location" width="60px" height="50px"/>
 
                  <Link to ="/map">
                  <li> Map </li>
                  </Link>
-                 <img src= "https://media.giphy.com/media/1oF1MaxVOqrgtG4hev/giphy.gif" width="60px" height="50px"/>
+                 <img src= "https://media.giphy.com/media/1oF1MaxVOqrgtG4hev/giphy.gif" alt="location" width="60px" height="50px"/>
                  <Link to ="/users">
                  <li> See Users Profile </li>
                  </Link>

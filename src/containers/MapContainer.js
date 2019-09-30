@@ -26,7 +26,9 @@ export class MapContainer extends Component {
     }
   };
 
+  
   render() {
+    
     console.log("MapContainer state", this.state)
     console.log("MapContainer props", this.props)
     return (
@@ -36,13 +38,29 @@ export class MapContainer extends Component {
         markingCurrentLocation={this.props.markingCurrentLocation}
         userList={this.props.userList}
       >
-        <Marker onClick={this.onMarkerClick} name={'current location'} />
+        <Marker onClick={this.onMarkerClick}
+        icon={"https://static.thenounproject.com/png/5024-200.png" }
+       
+         name={'current location'} />
+  
+         
         <InfoWindow
           marker={this.state.activeMarker}
           visible={this.state.showingInfoWindow}
-          onClose={this.onClose}
-        >
+          onClose={this.onClose}>
+            <div><p> <a href="users">
+            "/users"</a> </p>'
+          </div>
+          
+         
+          
+          
+         
+        
           <div>
+            <p>Hi</p>
+            <p>☀️☀️☀️☀️</p>
+            <h3>🌺🌺</h3>
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
         </InfoWindow>
