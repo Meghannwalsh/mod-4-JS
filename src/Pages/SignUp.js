@@ -21,7 +21,7 @@ export class SignUp extends Component {
             color: "blue",
             current_location: null
         }
-        this.props.currentUserHandler(newPerson)
+        this.props.currentUserHandlerSignUp(newPerson)
     }
 
     render() {
