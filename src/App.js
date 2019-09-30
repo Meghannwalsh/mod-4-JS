@@ -30,7 +30,7 @@ class App extends Component {
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
-          
+      
         },
         body: JSON.stringify({ user })
       })
@@ -77,6 +77,7 @@ class App extends Component {
 
   render() {
     console.log("amount of users", this.state.userList)
+    console.log("current user", this.state.current_user)
     // console.log(this.state)
     // debugger
     // console.log("app state", this.state.userList)
@@ -87,7 +88,7 @@ class App extends Component {
         
         <Switch>
         <Route exact path='/' component={Welcome} />
-          <Route exact path='/login' component={Login} />
+              <Route exact path='/login' component={() => <Login userList={this.state.userList} currentUserHandler={this.currentUserHandler}/>} />
               <Route exact path='/signup' component={() => <SignUp currentUserHandler={this.currentUserHandler}/>} />
 
            
