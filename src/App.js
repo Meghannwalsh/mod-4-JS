@@ -9,6 +9,8 @@ import NavBar from './components/Navbar';
 import SignUp from './Pages/SignUp';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Welcome from './Pages/Welcome';
+import Errors from './components/Errors.js'
+// import Map from './Map.js'
 
 
 
@@ -19,12 +21,11 @@ class App extends Component {
     current_user: {}
   } 
   
-  currentUserHandler = (user) => {
+  currentUserHandlerSignUp = (user) => {
+   
     this.setState({
       current_user: user
     })
-
-    if (!this.state.userList.includes(user)){
       fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
@@ -34,9 +35,16 @@ class App extends Component {
         },
         body: JSON.stringify({ user })
       })
-    
-    }
   }
+
+  currentUserHandlerLogin = (user) => {
+
+    this.setState({
+      current_user: user
+    })
+  }
+
+  
 
   componentDidMount(){
     fetch('http://localhost:3000/users')
@@ -72,12 +80,25 @@ class App extends Component {
       userList: newList
     })
 
+    fetch(`http://localhost:3000/users/${user.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        current_location: currentlocation
+      })
+    })
+
   }
 
 
   render() {
-    console.log("amount of users", this.state.userList)
+    console.log("UserList", this.state.userList)
     console.log("current user", this.state.current_user)
+    
+
     // console.log(this.state)
     // debugger
     // console.log("app state", this.state.userList)
@@ -89,19 +110,15 @@ class App extends Component {
         
         <Switch>
         <Route exact path='/' component={Welcome} />
-              <Route exact path='/login' component={() => <Login userList={this.state.userList} currentUserHandler={this.currentUserHandler}/>} />
-              <Route exact path='/signup' component={() => <SignUp currentUserHandler={this.currentUserHandler}/>} />
+              <Route exact path='/login' component={() => <Login userList={this.state.userList} currentUserHandlerLogin={this.currentUserHandlerLogin}/>} />
+              <Route exact path='/signup' component={() => <SignUp currentUserHandlerSignUp={this.currentUserHandlerSingUp}/>} />
 
            
           <Route 
           exact path='/map' 
-          component={() => <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList} /> }>
+          component={() => <MapContainer current_user={this.state.current_user} markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList} /> }>
           </Route>
           
-          <Route 
-          exact path='/map' 
-          component={() => <MapContainer markingCurrentLocation={this.markingCurrentLocation}  userList={this.state.userList} /> }>
-          </Route>
           
           <Route
            exact path='/users' 
