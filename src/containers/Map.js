@@ -102,7 +102,7 @@ export class CurrentLocation extends React.Component {
           }
         }
 
-        
+
 
         renderChildren() {
           const { children } = this.props;

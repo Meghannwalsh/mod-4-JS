@@ -67,7 +67,8 @@ class App extends Component {
       let newList = []
       this.state.userList.forEach(oneUser => {
       if (oneUser.id === user.id) {
-        oneUser.current_location = currentlocation
+        oneUser.lng = currentlocation.lng 
+        oneUser.lat = currentlocation.lat
         newList.push(oneUser)
       } else   {
         newList.push(oneUser)
@@ -83,6 +84,9 @@ class App extends Component {
       userList: newList
     })
 
+  
+    console.log("currentlocation in app", currentlocation)
+
     fetch(`http://localhost:3000/users/${user.id}`, {
       method: 'PATCH',
       headers: {
@@ -90,8 +94,9 @@ class App extends Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        current_location: currentlocation
-      })
+        lat: currentlocation.lat,
+        lng: currentlocation.lng
+       })
     })
 
   }

@@ -21,7 +21,8 @@ export class SignUp extends Component {
             name: this.state.name,
             password: this.state.password,
             color: this.state.color,
-            current_location: null
+            lat: null,
+            lng: null
         }
         this.props.currentUserHandlerSignUp(newPerson)
     }
