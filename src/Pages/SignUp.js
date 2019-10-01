@@ -23,7 +23,7 @@ export class SignUp extends Component {
             color: this.state.color,
             current_location: null
         }
-        this.props.currentUserHandlerSignUp(newPerson)
+        this.props.currentUserHandler(newPerson)
     }
 
     render() {

@@ -135,7 +135,7 @@ export class CurrentLocation extends React.Component {
           
            {this.props.userList.map(user =>{
 
-           return   <User current_user={this.props.current_user} user={user} 
+           return   <User user={user} 
             markingCurrentLocation={this.props.markingCurrentLocation}
             currentLocation={this.state.currentLocation}/>}) }
            

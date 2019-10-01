@@ -9,15 +9,10 @@ class User extends Component {
     }
 
 
-
-
     render() {
         // console.log("User state", this.state)
         // console.log("User props", this.props)
         // console.log("user current location", this.props.user.current_location.stringify)
-        console.log("current user in User", this.props.current_user)
-        console.log("user in User ", this.props.user)
-        
 
         return (
             
@@ -31,15 +26,7 @@ class User extends Component {
 
       
                 
-
-             {this.props.current_user[0].id === this.props.user.id
-             ?
-             this.props.markingCurrentLocation ? <button onClick={this.handleCallback}>Update Current Location</button> : null 
-             :
-            null} 
             </div>
-        
-             
         );
     }
 }

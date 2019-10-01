@@ -18,7 +18,7 @@ export class Login extends Component {
         const currentPerson = this.props.userList.filter(user => {
             return this.state.name === user.name
         })
-        this.props.currentUserHandlerLogin(currentPerson)
+        this.props.currentUserHandler(currentPerson)
     }
 
     render(){
