@@ -27,9 +27,6 @@ class User extends Component {
 
                 {/* <h4>{this.props.user.current_location}</h4> */}
                 
-                {this.props.markingCurrentLocation ? <button onClick={this.handleCallback}>Test handleCallback</button> : null}
-
-      
                 
 
              {this.props.current_user[0].id === this.props.user.id
