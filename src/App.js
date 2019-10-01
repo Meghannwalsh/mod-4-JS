@@ -10,6 +10,7 @@ import SignUp from './Pages/SignUp';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Welcome from './Pages/Welcome';
 import Errors from './components/Errors.js'
+
 // import Map from './Map.js'
 
 
@@ -18,7 +19,9 @@ class App extends Component {
   state = {
     userList: [],
     usersLocation: {},
-    current_user: {}
+    current_user: {
+      id: null
+    }
   } 
   
   currentUserHandlerSignUp = (user) => {
@@ -111,7 +114,8 @@ class App extends Component {
         <Switch>
         <Route exact path='/' component={Welcome} />
               <Route exact path='/login' component={() => <Login userList={this.state.userList} currentUserHandlerLogin={this.currentUserHandlerLogin}/>} />
-              <Route exact path='/signup' component={() => <SignUp currentUserHandlerSignUp={this.currentUserHandlerSingUp}/>} />
+             
+              <Route exact path='/signup' component={() => <SignUp currentUserHandlerSignUp={this.currentUserHandlerSignUp}/>} />
 
            
           <Route 

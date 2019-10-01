@@ -55,7 +55,7 @@ export class SignUp extends Component {
                     <button type="submit">Sign Up </button>
                 </form>
                 <br/>
-                <img src = "https://i.stack.imgur.com/Ndsyl.gif" width="50px"/>
+                <img src = "https://i.stack.imgur.com/Ndsyl.gif" alt="sign" width="50px"/>
                 <br/>
                 <br/>
                 <Navbar2/>

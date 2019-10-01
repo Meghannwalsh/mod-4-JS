@@ -3,17 +3,17 @@ import ReactDOM from 'react-dom';
 import User from '../components/User'
 import Navbar2 from '../components/NavBar2';
 import NavCSS from '../components/NavBar2CSS.css';
-
+import  { Redirect } from 'react-router-dom'
 
 
 
 const mapStyles = {
   map: {
     position: 'absolute',
-    right: "100px",
-    top: "300px",
-    width: '65%',
-    height: '3800px'
+    right: "150px",
+    top: "600px",
+    width: '80%',
+    height: '800px'
   }
 };
 
@@ -124,23 +124,34 @@ export class CurrentLocation extends React.Component {
         console.log("Map state", this.state)
         console.log("Map props", this.props)
         const style = Object.assign({}, mapStyles.map);
+
        return (
-         <div>
-           <div style={style} ref="map">
+        <div>
+
+       
+         <div style={style} ref="map">
              Loading map...
-             
            </div>
            
+           
            {this.renderChildren()}
-          
-           {this.props.userList.map(user =>{
 
-           return   <User current_user={this.props.current_user} user={user} 
+           
+
+          {this.props.userList.map(user =>{
+
+           return <User current_user={this.props.current_user} user={user} 
             markingCurrentLocation={this.props.markingCurrentLocation}
             currentLocation={this.state.currentLocation}/>}) }
            
            <Navbar2/>
+
+           
+          
+         
          </div>
+         
+         
              
               
              

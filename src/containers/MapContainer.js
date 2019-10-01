@@ -82,9 +82,7 @@ export class MapContainer extends Component {
           </div>
           
           <div>
-            <p>Hi</p>
-            <p>☀️☀️☀️☀️</p>
-            <h3>🌺🌺</h3>
+           
             <h4>{this.state.selectedPlace.name}</h4>
           </div>
         </InfoWindow>
@@ -93,7 +91,6 @@ export class MapContainer extends Component {
     );
   }
 }
-
 export default GoogleApiWrapper({
   apiKey: 'AIzaSyB_8dUWPoYGWEgEAMyPNhqXZjnp2GW4cBU'
 })(MapContainer);

@@ -63,11 +63,14 @@ li {
   list-style: none;
 }
 .card {
-  box-shadow: 0 4px 8px 0 rgba(254, 47, 47, 0.721);
-  transition: 0.3s;
-  width:400px;
-  height:500px;
   text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 10rem;
+  height: 15rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #e04b52
 }
 
 /* On mouse-over, add a deeper shadow */
