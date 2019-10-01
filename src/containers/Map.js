@@ -126,10 +126,11 @@ export class CurrentLocation extends React.Component {
         const style = Object.assign({}, mapStyles.map);
 
        return (
+        
         <div>
+     
 
-       
-         <div style={style} ref="map">
+      <div style={style} ref="map">
              Loading map...
            </div>
            
@@ -145,8 +146,8 @@ export class CurrentLocation extends React.Component {
             currentLocation={this.state.currentLocation}/>}) }
            
            <Navbar2/>
-
            
+
           
          
          </div>

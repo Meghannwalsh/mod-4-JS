@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import  { Redirect } from 'react-router-dom'
 
 
 
@@ -23,8 +24,9 @@ class User extends Component {
 
 
             <div className = "card">
+
                
-                <h1>{this.props.user.name}</h1>
+               <h1>{this.props.user.name}</h1>
                 <h4>{this.props.user.color}</h4>
               
 
@@ -36,6 +38,7 @@ class User extends Component {
              :
             null} 
             
+         
             </div>
         
              

@@ -12,13 +12,15 @@ export class MapContainer extends Component {
   };
 
   onMarkerClick = (props, marker, e) =>
+  
     this.setState({
+      
       selectedPlace: props,
       activeMarker: marker,
       showingInfoWindow: true,
-      draggable:true,
-      title:"Drag me!"
-    });
+      
+    
+    }); 
 
   onClose = props => {
     if (this.state.showingInfoWindow) {
@@ -50,6 +52,7 @@ export class MapContainer extends Component {
           key={user.id}
           onClick={this.onMarkerClick}
           position={user.current_location}
+         
         >
         
             <InfoWindow
@@ -68,7 +71,13 @@ export class MapContainer extends Component {
        }
         
         <Marker onClick={this.onMarkerClick}
-        // icon={"https://static.thenounproject.com/png/5024-200.png" }
+         icon={{
+          strokeColor: "red",
+          scale: 3
+      }}
+        
+       
+       
        
          name={'current location'} >
   

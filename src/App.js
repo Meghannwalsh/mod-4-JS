@@ -19,10 +19,10 @@ class App extends Component {
   state = {
     userList: [],
     usersLocation: {},
-    current_user: {
-      id: null
-    }
+    current_user: {}
   } 
+
+  
   
   currentUserHandlerSignUp = (user) => {
    

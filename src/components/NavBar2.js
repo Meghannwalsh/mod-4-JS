@@ -1,20 +1,26 @@
 import React, { Component } from 'react'
 
+
 export class NavBar2 extends Component {
+  
     constructor(props) {
         super(props);
         this.state = {
-          bgColor: ""
+          marker: this.props.activeMarker,
+   
         }
       }
       imageClick = (e) => {
+        const icon="https://cdn.rallybound.org/content/images/img/6379/PersonIcon2.png"
         this.setState({
-          bgColor: "red"
+          bgColor: "red",
+          marker: icon
         })
       }    
 
     render() {
-        console.log(this.state)
+        // console.log(this.state)
+        
         return (
            
           
@@ -45,7 +51,7 @@ export class NavBar2 extends Component {
                  
                  <li> Purple = Studying </li>
                  <img src="https://cdn1.iconfinder.com/data/icons/user-interface-colorful/48/user-512.png"   style={{backgroundColor: this.state.bgColor}}
-                onClick={this.imageClick} alt="red" width="40px" height="60px"/>
+                onClick={this.imageClick}    marker={this.state.activeMarker} alt="red" width="40px" height="60px"/>
                  
                  
              </ul>
