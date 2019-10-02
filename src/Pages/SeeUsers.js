@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 import User from '../components/User'
 import Navbar2 from '../components/NavBar2';
-import NavCSS from '../components/NavBar2CSS.css';
 
 
 

@@ -24,15 +24,15 @@ class User extends Component {
 
             <div className = "card">
                
-                <h1>{this.props.user.name}</h1>
-                <h4>{this.props.user.color}</h4>
+                <h1 className="user-name">{this.props.user.name}</h1>
+                <h4 className="user-color">{this.props.user.color}</h4>
               
 
                 
 
              {this.props.current_user[0].id === this.props.user.id
              ?
-             this.props.markingCurrentLocation ? <button onClick={this.handleCallback}>Update Current Location</button> : null 
+             this.props.markingCurrentLocation ? <button className="userbtn" onClick={this.handleCallback}>Update Current Location</button> : null 
              :
             null} 
             

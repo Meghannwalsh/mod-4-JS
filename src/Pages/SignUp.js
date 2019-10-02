@@ -5,15 +5,21 @@ export class SignUp extends Component {
     state = {
          name: '',
          password: '',
-         color: ''
-
-    }
+        
+}
 
     handleChange = e => {
         this.setState({
             [e.target.name]: e.target.value
         })
     }
+
+    // changeColorClick = e => {
+    //   const newColor = {
+        
+    //   }
+        
+    // }
 
     handleSubmit = e => {
         e.preventDefault()
@@ -27,8 +33,11 @@ export class SignUp extends Component {
         this.props.currentUserHandlerSignUp(newPerson)
     }
 
+ 
+
     render() {
         console.log("signUp", this.state)
+        
         return (
             
             <div className="sign-up-page">
@@ -53,7 +62,7 @@ export class SignUp extends Component {
                    
                     
                 <br/>
-                    <button type="submit">Sign Up </button>
+                    <button className ="signupbtn" type="submit">Sign Up </button>
                 </form>
                 <br/>
                 <img src = "https://i.stack.imgur.com/Ndsyl.gif" alt="sign" width="50px"/>

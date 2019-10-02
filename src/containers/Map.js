@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import User from '../components/User'
 import Navbar2 from '../components/NavBar2';
 import NavCSS from '../components/NavBar2CSS.css';
-import  { Redirect } from 'react-router-dom'
+
 
 
 
@@ -118,8 +118,10 @@ export class CurrentLocation extends React.Component {
              
             });
           });
+          
         }
 
+        
       render() {
         console.log("Map state", this.state)
         console.log("Map props", this.props)
@@ -144,7 +146,7 @@ export class CurrentLocation extends React.Component {
             markingCurrentLocation={this.props.markingCurrentLocation}
             currentLocation={this.state.currentLocation}/>}) }
            
-           <Navbar2/>
+           <Navbar2 changingCurrentColor={this.props.changingCurrentColor}/>
 
            
           

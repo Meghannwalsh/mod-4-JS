@@ -21,6 +21,46 @@ body {
   
 }
 
+.signupbtn {
+  background-color: rgb(79, 0, 72);
+  color: white;
+  width: 80px;
+  height: 40px;
+  border: dotted;
+
+}
+.signupbtn:hover {
+  color: white;
+  background-color: crimson;
+}
+
+.userbtn {
+  background-color: rgb(79, 0, 72);
+  color: white;
+  width: 150px;
+  height: 40px;
+  border: dotted;
+}
+
+.userbtn:hover {
+  color: white;
+  background-color: crimson;
+}
+
+
+#loginbtn {
+  background-color: rgb(79, 0, 72);
+  color: white;
+  width: 80px;
+  height: 40px;
+  border: dotted;
+
+}
+#loginbtn:hover {
+  color: white;
+  background-color: crimson;
+}
+
 
 .login-page {
   position: relative;
@@ -33,6 +73,15 @@ body {
   border-width: 5px;
 }
 
+.user-name {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  
+}
+
+.user-color {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  border: dotted;
+}
 
 .App-link {
   color: #09d3ac;
@@ -50,7 +99,7 @@ nav{
   min-height: 10vh;
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVf3kVvO2CKk1z9DMsaWxVOJIlZ3m0GICQk2UZualghXv9Wmy3')
 }
-li {
+.navlink {
   background-color: black;
   color: white;
 }
@@ -61,7 +110,11 @@ li {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  background-color: black;
+  color: white;
+  
 }
+
 .card {
   text-align: center;
   border: grey solid 1px;
@@ -82,4 +135,7 @@ li {
 .container {
  
   padding: 2px 16px;
+}
+.mapicon:hover {
+  fill: rgb(131, 218, 69);
 }
