@@ -4,10 +4,17 @@ import React from 'react';
 
 export class Marker extends React.Component {
 
+    
         componentDidUpdate(prevProps) {
             if ((this.props.map !== prevProps.map) ||
                 (this.props.position !== prevProps.position)) {
                 this.renderMarker();
+            }
+        }
+
+        componentWillUnmount() {
+            if (this.marker) {
+                this.marker.setMap(null);
             }
         }
 
@@ -16,27 +23,41 @@ export class Marker extends React.Component {
             let {
                 map, google
             } = this.props;
+
+            var contentString = `${this.props.user.name}`
             
             const position = new google.maps.LatLng(this.props.user.lat, this.props.user.lng);
+
+            var infowindow = new google.maps.InfoWindow({
+                content: contentString
+            });
 
             const pref = {
                 map: map,
                 position: position
             };
-            this.marker = new google.maps.Marker(pref);
+            var marker = new google.maps.Marker(pref);
+
+            marker.addListener('click', function () {
+                infowindow.open(map, marker);
+            });
+
         }
-        // ...
+    
 
         render() {
             
+
+            console.log("marker props", this.props)
+            
             return (
-                null
-                // <div>
-                // {this.renderMarker()}
-                // </div>
+               null
             )
         }
     }
+
+
+
 
 // Marker.propTypes = {
 //     map: React.PropTypes.object
