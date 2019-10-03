@@ -7,7 +7,7 @@ class Welcome extends Component {
     return (
       <div className="row " id="Body">
         <div className="welcome-page">
-          <h2 id="welcomeText">Welcome to ....</h2>
+          <h2 id="welcomeText">Welcome to The Headless Map</h2>
           <img src="https://media.giphy.com/media/8JQOVahM4wGC99GF0o/giphy.gif" alt="quote"/>
 
         </div>

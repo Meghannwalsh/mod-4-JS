@@ -19,7 +19,7 @@ export class Marker extends React.Component {
         }
 
         renderMarker = () => {
-
+           
             let {
                 map, google
             } = this.props;

@@ -5,12 +5,14 @@ export class Login extends Component {
     state = {
         name: '', 
         password: '',
-        color: ''
+        color: '',
+        redirectToMap: false
     }
 
     handleChange = e => {
         this.setState({
-            [e.target.name]: e.target.value
+            [e.target.name]: e.target.value,
+            
         })
     }
 
@@ -21,15 +23,9 @@ export class Login extends Component {
             return this.state.name === user.name
         })  
         this.props.currentUserHandlerLogin(currentPerson)
-        
+   
     }
-    mapRedirect = e => {
-        console.log(e.target)
-       {
-            
-        }
-    }
-
+ 
     render(){
         
         return (
@@ -51,7 +47,8 @@ export class Login extends Component {
                 
             <br/>
            
-                <button onClick={this.mapRedirect} id="loginbtn" type="submit" > Login </button>
+           
+                <button  id="loginbtn" type="submit" > Login </button>
             </form>
             <br/>
             <img src = "https://i.stack.imgur.com/Ndsyl.gif" alt="login" width="50px"/>

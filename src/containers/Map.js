@@ -19,6 +19,10 @@ const mapStyles = {
 
 
 export class CurrentLocation extends React.Component {
+    state = {
+      reRender: true
+    }
+
     constructor(props) {
         super(props);
     
@@ -121,7 +125,8 @@ export class CurrentLocation extends React.Component {
           
         }
 
-        
+      
+
       render() {
         console.log("Map state", this.state)
         console.log("Map props", this.props)
@@ -129,7 +134,7 @@ export class CurrentLocation extends React.Component {
 
        return (
         <div>
-
+         
        
          <div style={style} ref="map">
              Loading map...

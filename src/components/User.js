@@ -12,6 +12,7 @@ class User extends Component {
 
 
     render() {
+      
         // console.log("User state", this.state)
         console.log("User props", this.props)
         // console.log("user current location", this.props.user.current_location.stringify)

@@ -9,8 +9,8 @@ import NavBar from './components/Navbar';
 import SignUp from './Pages/SignUp';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import Welcome from './Pages/Welcome';
-import Errors from './components/Errors.js'
-import NavBar2 from './components/NavBar2';
+// import Errors from './components/Errors.js'
+// import NavBar2 from './components/NavBar2';
 
 // import Map from './Map.js'
 
@@ -20,7 +20,7 @@ class App extends Component {
   state = {
     userList: [],
     usersLocation: {},
-    current_user: {},
+    current_user: {}
     
   } 
   
@@ -101,21 +101,26 @@ class App extends Component {
 
   }
 
-  changingCurrentColor = color => {
-    const user = this.state.current_user
-    // console.log(color)
-    fetch(`http://localhost:3000/users/${user.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        color: color
+  changingCurrentColor = (color) => {
+    console.log("color", color)
+
+   fetch(`http://localhost:3000/users/${this.state.current_user[0].id}`, {
+          method: 'PATCH',
+          headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+          body: JSON.stringify({
+          color
        })
       
-    })
-  }
+      })
+      .then(response => response.json())
+      .then(output => {
+      console.log("output" , output)
+      })
+      }
+    
   
     
   
